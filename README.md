@@ -5,6 +5,7 @@
 ## 문제 목록
 
 - [HELLOWORLD](https://algospot.com/judge/problem/read/HELLOWORLD)
+- [MERCY](https://algospot.com/judge/problem/read/MERCY)
 
 ## 설치 및 실행
 
