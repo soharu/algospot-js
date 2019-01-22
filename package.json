@@ -1,0 +1,15 @@
+{
+  "name": "algospot",
+  "version": "1.0.0",
+  "description": "알고스팟 문제풀이",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -g"
+  },
+  "author": "soharu",
+  "license": "ISC",
+  "dependencies": {
+    "mocha": "^5.2.0",
+    "npm": "^6.5.0"
+  }
+}
