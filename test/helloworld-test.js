@@ -1,5 +1,5 @@
 const assert = require('assert');
-const hello = require('../hello_world/solution.js');
+const hello = require('../source/helloworld.js');
 
 describe('HELLOWORLD', function() {
     it('should say hello with a name', function() {
