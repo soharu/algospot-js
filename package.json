@@ -4,7 +4,7 @@
   "description": "알고스팟 문제풀이",
   "main": "index.js",
   "scripts": {
-    "test": "mocha -g"
+    "test": "mocha -w -g"
   },
   "author": "soharu",
   "license": "ISC",
