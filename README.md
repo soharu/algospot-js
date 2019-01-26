@@ -2,10 +2,11 @@
 
 자바스크립트로 [알고스팟](https://algospot.com/) 문제를 풀어보자.
 
-## 문제 목록
+## 푼 문제 목록
 
 - [HELLOWORLD](https://algospot.com/judge/problem/read/HELLOWORLD)
 - [MERCY](https://algospot.com/judge/problem/read/MERCY)
+- [DRAWRECT](https://algospot.com/judge/problem/read/DRAWRECT)
 
 ## 설치 및 실행
 
