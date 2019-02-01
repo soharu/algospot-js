@@ -6,6 +6,7 @@ else
     name="$(echo $1 | tr '[A-Z]' '[a-z]')"
     touch source/${name}.js
     touch data/${name}.in
+    touch data/${name}.out
     touch test/${name}-test.js
     ls */${name}*
 fi

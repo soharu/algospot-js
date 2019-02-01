@@ -26,6 +26,7 @@ npm install
 위 스크립트를 실행하면 문제 풀이를 위한 세 가지 파일을 만듭니다:
 
 - `data/{problem_id}.in`
+- `data/{problem_id}.out`
 - `source/{problem_id}.js`
 - `test/{problem_id}-test.js`
 
@@ -38,8 +39,10 @@ node {problem_id}/solution.js < {problem_id}/data.in
 또는
 
 ```
-./run.sh {problem_id}
+./run.sh {problem_id} [--diff]
 ```
+
+- `--diff` 옵션을 주면 출력을 기대하는 출력(`data/{problem_id}.out`)과 비교해줍니다.
 
 ### 테스트
 
