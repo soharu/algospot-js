@@ -8,6 +8,7 @@
 - [MERCY](https://algospot.com/judge/problem/read/MERCY) / [제출된 답안 보기](https://algospot.com/judge/submission/recent/?problem=MERCY&user=haru&language=js&state=6)
 - [DRAWRECT](https://algospot.com/judge/problem/read/DRAWRECT) / [제출된 답안 보기](https://algospot.com/judge/submission/recent/?problem=DRAWRECT&user=haru&language=js&state=6)
 - [ENDIANS](https://algospot.com/judge/problem/read/ENDIANS) / [제출된 답안 보기](https://algospot.com/judge/submission/recent/?problem=ENDIANS&user=haru&language=js&state=6)
+- [LECTURE](https://algospot.com/judge/problem/read/LECTURE) / [제출된 답안 보기](https://algospot.com/judge/submission/recent/?problem=LECTURE&user=haru&language=js&state=6)
 
 ## 설치 및 실행
 
