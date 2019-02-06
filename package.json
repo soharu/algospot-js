@@ -17,6 +17,9 @@
   },
   "xo": {
     "space": true,
-    "envs": ["node", "mocha"]
+    "envs": ["node", "mocha"],
+    "rules": {
+      "no-eval": "off"
+    }
   }
 }
