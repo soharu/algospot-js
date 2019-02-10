@@ -19,7 +19,8 @@
     "space": true,
     "envs": ["node", "mocha"],
     "rules": {
-      "no-eval": "off"
+      "no-eval": "off",
+      "capitalized-comments": "off"
     }
   }
 }
