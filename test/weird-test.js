@@ -8,11 +8,16 @@ describe('WEIRD', () => {
         [1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1]);
     });
 
-    it('should generate prime number table that the prime numbers are less than 3000', () => {
-      const table = weird.generatePrimeNumberTable(3000);
-      assert.deepStrictEqual(table.filter(v => v === 0).length, 430);
+    it('should generate prime number table that the prime numbers are less than 7150', () => {
+      const table = weird.generatePrimeNumberTable(7150);
+      assert.deepStrictEqual(table.filter(v => v === 0).length, 914);
       assert.strictEqual(table[2473], 0);
       assert.strictEqual(table[2999], 0);
+      assert.strictEqual(table[7109], 0);
+      assert.strictEqual(table[7121], 0);
+      assert.strictEqual(table[7127], 0);
+      assert.strictEqual(table[7129], 0);
+      assert.strictEqual(table[7151], undefined);
     });
   });
 
