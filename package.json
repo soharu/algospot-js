@@ -20,7 +20,8 @@
     "envs": ["node", "mocha"],
     "rules": {
       "no-eval": "off",
-      "capitalized-comments": "off"
+      "capitalized-comments": "off",
+      "padding-line-between-statements": "off"
     }
   }
 }
