@@ -1,51 +1,58 @@
+'use strict';
+
 function getProperDivisors(number) {
-  const divisors = new Set([1]);
-  for (let i = 2, n = number; i < n; ++i) {
-    if (number % i === 0) {
-      divisors.add(i);
-      n = Math.trunc(number / i);
-      divisors.add(n);
+  const divisors = [];
+  divisors.push(1);
+  for (let i = 2, limit = number; i < limit; ++i) {
+    if (number % i !== 0) {
+      continue;
     }
+    divisors.push(i);
+    limit = Math.trunc(number / i);
+    if (i === limit) {
+      break;
+    }
+    divisors.push(limit);
   }
-  return [...divisors].sort((a, b) => b - a); // sort by descending order
+  return divisors.sort((a, b) => b - a); // sort by descending order
 }
 
-function isExistSubset(number, divisors, index, acc) {
-  if (acc === number) {
+function hasSameSumOfSubsets(number, divisors, index, sumOfSubset) {
+  if (sumOfSubset === number) {
+    // 찾았다!
     return true;
   }
-  if (index >= divisors.length) {
+  if (sumOfSubset > number) {
+    // 더할 필요가 없다
     return false;
   }
-  if (acc < number) {
-    return isExistSubset(number, divisors, index + 1, acc + divisors[index]) ||
-      isExistSubset(number, divisors, index + 1, acc);
+  if (index === divisors.length) {
+    // 더할게 없다
+    return false;
   }
-  return false;
+  return hasSameSumOfSubsets(number, divisors, index + 1, sumOfSubset + divisors[index]) ||
+    hasSameSumOfSubsets(number, divisors, index + 1, sumOfSubset);
 }
 
 function isWeird(number) {
   const divisors = getProperDivisors(number);
   const sum = divisors.reduce((acc, d) => acc + d, 0);
-  if (sum > number && isExistSubset(number, divisors, 0, 0) === false) {
-    return true;
-  }
-  return false;
+  return (sum > number) && (hasSameSumOfSubsets(number, divisors, 0, 0) === false);
 }
 
 if (require.main === module) {
   const check = number => isWeird(number) ? 'weird' : 'not weird';
-  const inputs = [];
+  let k = 0;
   require('readline')
     .createInterface({
       input: process.stdin
     })
     .on('line', line => {
-      inputs.push(line.trim());
-    })
-    .on('close', () => {
-      for (let i = 1; i < inputs.length; ++i) {
-        console.log(check(parseInt(inputs[i], 10)));
+      const n = parseInt(line, 10);
+      if (k === 0) {
+        k = n;
+      } else {
+        console.log(check(n));
       }
     });
 } else {
