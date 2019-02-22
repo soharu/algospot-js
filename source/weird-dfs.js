@@ -1,59 +1,65 @@
 'use strict';
 
 function getProperDivisors(number) {
-  const divisors = [];
-  divisors.push(1);
+  const divisors = new Set();
+  divisors.add(1);
   for (let i = 2, limit = number; i < limit; ++i) {
-    if (number % i !== 0) {
-      continue;
+    if (number % i === 0) {
+      divisors.add(i);
+      limit = Math.trunc(number / i);
+      divisors.add(limit);
     }
-    divisors.push(i);
-    limit = Math.trunc(number / i);
-    if (i === limit) {
-      break;
-    }
-    divisors.push(limit);
   }
-  return divisors.sort((a, b) => b - a); // sort by descending order
+  return [...divisors].sort((a, b) => b - a); // sort by descending order
 }
 
-function hasSameSumOfSubsets(number, divisors, index, sumOfSubset) {
-  if (sumOfSubset === number) {
-    // 찾았다!
+function hasSameSumOfSubsets(number, divisors, pos, sum) {
+  const exceeded = sum - number;
+
+  if (exceeded === 0) {
     return true;
   }
-  if (sumOfSubset > number) {
-    // 더할 필요가 없다
+
+  if (exceeded < 0) {
     return false;
   }
-  if (index === divisors.length) {
-    // 더할게 없다
+
+  if (pos === divisors.length) {
     return false;
   }
-  return hasSameSumOfSubsets(number, divisors, index + 1, sumOfSubset + divisors[index]) ||
-    hasSameSumOfSubsets(number, divisors, index + 1, sumOfSubset);
+
+  return hasSameSumOfSubsets(number, divisors, pos + 1, sum - divisors[pos]) ||
+    hasSameSumOfSubsets(number, divisors, pos + 1, sum);
 }
 
 function isWeird(number) {
   const divisors = getProperDivisors(number);
   const sum = divisors.reduce((acc, d) => acc + d, 0);
-  return (sum > number) && (hasSameSumOfSubsets(number, divisors, 0, 0) === false);
+  if (sum <= number) {
+    return false;
+  }
+  if (hasSameSumOfSubsets(number, divisors, 0, sum)) {
+    return false;
+  }
+  return true;
+}
+
+function solve(n) {
+  return isWeird(n) ? 'weird' : 'not weird';
 }
 
 if (require.main === module) {
-  const check = number => isWeird(number) ? 'weird' : 'not weird';
-  let k = 0;
+  const inputs = [];
   require('readline')
     .createInterface({
       input: process.stdin
     })
     .on('line', line => {
-      const n = parseInt(line, 10);
-      if (k === 0) {
-        k = n;
-      } else {
-        console.log(check(n));
-      }
+      inputs.push(parseInt(line.trim(), 10));
+    })
+    .on('close', () => {
+      inputs.slice(1, inputs[0] + 1)
+        .forEach(n => console.log(solve(n)));
     });
 } else {
   exports.getProperDivisors = getProperDivisors;

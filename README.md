@@ -15,9 +15,6 @@
 - [HOTSUMMER](https://algospot.com/judge/problem/read/HOTSUMMER) / [제출된 답안 보기](https://algospot.com/judge/submission/recent/?problem=HOTSUMMER&user=haru&language=js&state=6)
 - [URI](https://algospot.com/judge/problem/read/URI) / [제출된 답안 보기](https://algospot.com/judge/submission/recent/?problem=URI&user=haru&language=js&state=6)
 - [XHAENEUNG](https://algospot.com/judge/problem/read/XHAENEUNG) / [제출된 답안 보기](https://algospot.com/judge/submission/recent/?problem=XHAENEUNG&user=haru&language=js&state=6)
-
-## 푸는 중...
-
 - [WEIRD](https://algospot.com/judge/problem/read/WEIRD) / [제출된 답안 보기](https://algospot.com/judge/submission/recent/?problem=WEIRD&user=haru&language=js&state=)
 
 ## 설치 및 실행

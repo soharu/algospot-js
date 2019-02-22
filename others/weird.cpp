@@ -22,21 +22,19 @@ vector<int> get_divisors(int n) {
 }
 
 bool has_same_sum_of_divisors_subset(const int& n, const vector<int> &divisors, int pos, int sum) {
-  if (sum == n) { return true; }
-  if (sum > n) { return false; }
+  int exceeded = sum - n;
+  if (exceeded == 0) { return true; }
+  if (exceeded < 0) { return false; }
   if (pos == divisors.size()) { return false; }
-  return has_same_sum_of_divisors_subset(n, divisors, pos + 1, sum + divisors[pos]) ||
+  return has_same_sum_of_divisors_subset(n, divisors, pos + 1, sum - divisors[pos]) ||
     has_same_sum_of_divisors_subset(n, divisors, pos + 1, sum);
 }
 
 bool is_weird(int n) {
-  // It is not known if any odd weird numbers exist.
-  // If so, they must be greater than 10^21
-  if (n % 2 == 1) { return false; }
   auto divisors = get_divisors(n);
   auto sum_of_divisors = accumulate(divisors.begin(), divisors.end(), 0);
   if (sum_of_divisors <= n) { return false; }
-  if (has_same_sum_of_divisors_subset(n, divisors, 0, 0)) { return false; }
+  if (has_same_sum_of_divisors_subset(n, divisors, 0, sum_of_divisors)) { return false; }
   return true;
 }
 

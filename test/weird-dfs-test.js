@@ -2,6 +2,15 @@ const assert = require('assert');
 const weird = require('../source/weird-dfs.js');
 
 describe('WEIRD-DFS', () => {
+  describe('sort integer array', () => {
+    it('ascending order', () => {
+      assert.deepStrictEqual([1, 11, 12, 3].sort((a, b) => a - b), [1, 3, 11, 12]);
+    });
+    it('descending order', () => {
+      assert.deepStrictEqual([1, 11, 12, 3].sort((a, b) => b - a), [12, 11, 3, 1]);
+    });
+  });
+
   describe('getProperDivisors()', () => {
     it('should return an array that contains proper divisors of a number', () => {
       assert.deepStrictEqual(weird.getProperDivisors(2), [1]);
@@ -19,17 +28,13 @@ describe('WEIRD-DFS', () => {
 
   describe('isWeird()', () => {
     it('should check whether a number is weird', () => {
-      assert.strictEqual(weird.isWeird(2), false);
-      assert.strictEqual(weird.isWeird(3), false);
-      assert.strictEqual(weird.isWeird(8), false);
-      assert.strictEqual(weird.isWeird(9), false);
-      assert.strictEqual(weird.isWeird(11), false);
-      assert.strictEqual(weird.isWeird(12), false);
-      assert.strictEqual(weird.isWeird(20), false);
+      for (let i = 2; i < 70; ++i) {
+        assert.strictEqual(weird.isWeird(i), false, `${i} should not be weird.`);
+      }
       assert.strictEqual(weird.isWeird(70), true);
       assert.strictEqual(weird.isWeird(836), true);
       assert.strictEqual(weird.isWeird(4030), true);
-      assert.strictEqual(weird.isWeird(2 ** 32), false);
+      assert.strictEqual(weird.isWeird(2 ** 16), false);
       assert.strictEqual(weird.isWeird(14770), true);
       assert.strictEqual(weird.isWeird(17724), false);
       assert.strictEqual(weird.isWeird(56322), false);
