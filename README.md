@@ -57,6 +57,7 @@ npm test {problem_id}
 - [URI](https://algospot.com/judge/problem/read/URI) / [제출된 답안 보기](https://algospot.com/judge/submission/recent/?problem=URI&user=haru&language=js&state=6)
 - [XHAENEUNG](https://algospot.com/judge/problem/read/XHAENEUNG) / [제출된 답안 보기](https://algospot.com/judge/submission/recent/?problem=XHAENEUNG&user=haru&language=js&state=6)
 - [WEIRD](https://algospot.com/judge/problem/read/WEIRD) / [제출된 답안 보기](https://algospot.com/judge/submission/recent/?problem=WEIRD&user=haru&language=js&state=)
+- [STRJOIN](https://algospot.com/judge/problem/read/STRJOIN) / [제출된 답안 보기](https://algospot.com/judge/submission/recent/?problem=STRJOIN&user=haru&language=js&state=)
 
 ### 트리
 
