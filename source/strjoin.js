@@ -20,7 +20,7 @@ if (require.main === module) {
   }).on('line', line => {
     inputs.push(line.trim());
   }).on('close', () => {
-    let count = inputs[0] * 2
+    const count = inputs[0] * 2;
     for (let i = 1; i <= count; i += 2) {
       const numbers = inputs[i + 1].split(' ').map(v => parseInt(v, 10));
       console.log(solve(numbers));
