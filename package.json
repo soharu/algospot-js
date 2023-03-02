@@ -9,7 +9,7 @@
   "author": "soharu",
   "license": "ISC",
   "dependencies": {
-    "mocha": "^5.2.0",
+    "mocha": "^10.2.0",
     "npm": "^6.5.0"
   },
   "devDependencies": {
