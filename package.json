@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "mocha": "^5.2.0",
-    "npm": "^6.5.0"
+    "npm": "^6.14.18"
   },
   "devDependencies": {
     "xo": "^0.24.0"
